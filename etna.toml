@@ -1,6 +1,10 @@
 name = "bst-racket"
 language = "Racket"
 description = "Binary Search Tree property-based testing workload (Racket)."
+strategies = [
+  "ProplangBespoke", 
+  "RackcheckBespoke",
+  "ParallelBespoke"]
 
 mutations = [
   "insert_1",
@@ -80,6 +84,7 @@ tasks = [
   { property = "InsertUnion", witnesses = [{ input = "(E (T E 0 0 E) 1 0)" }] },
   { property = "UnionDeleteInsert", witnesses = [{ input = "((T E 0 0 E) (T E 0 0 E) 0 0)" }] },
   { property = "UnionUnionAssoc", witnesses = [{ input = "((T E 0 1 E) (T E 0 1 E) (T E 0 0 E))" }] },
+  { property = "UnionUnionIdem", witnesses = [{ input = "(T E 0 0 E)" }] },
 ]
 
 [[tasks]]
